@@ -52,8 +52,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain authorizeRequests(HttpSecurity http) throws Exception {
+        http.csrf(csrf -> csrf.disable());
+
         http.authorizeHttpRequests(Authorize -> {
             Authorize
+                    .requestMatchers("/css/**").permitAll()        // static css
                     .requestMatchers("/").permitAll()              // public home page
                     .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")  // user area
                     .requestMatchers("/admin/**").hasRole("ADMIN") // admin area only
