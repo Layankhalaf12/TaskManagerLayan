@@ -41,7 +41,7 @@ public class UserController {
 
     // Handle create task form submission
     @PostMapping("/create-task")
-    public String createThask(@RequestParam String title,
+    public String createTask(@RequestParam String title,
                              @RequestParam String description,
                              Authentication authentication) {
         String username = authentication.getName();
