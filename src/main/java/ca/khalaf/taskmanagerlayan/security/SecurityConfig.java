@@ -51,9 +51,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain authorizeRequests(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable());
-
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(Authorize -> {
             Authorize
                     .requestMatchers("/css/**").permitAll()        // static css

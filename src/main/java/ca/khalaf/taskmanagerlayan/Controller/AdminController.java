@@ -17,7 +17,9 @@ public class AdminController {
 
     private final TaskService taskService;
 
-    public AdminController(TaskService taskService) {
+    public AdminController(TaskService taskService)
+    {
+
         this.taskService = taskService;
     }
 
@@ -31,7 +33,8 @@ public class AdminController {
 
     // Admin deletes any task by id
     @PostMapping("/delete/{id}")
-    public String deleteTask(@PathVariable Integer id) {
+    public String deleteTask(@PathVariable Integer id)
+    {
         taskService.deleteTask(id);
         return "redirect:/admin/dashboard";
     }
