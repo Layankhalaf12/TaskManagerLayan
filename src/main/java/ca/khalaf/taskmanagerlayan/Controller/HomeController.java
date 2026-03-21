@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    // Public home page
+    // Public home page   redirect to login page if not authenticated
     @GetMapping("/")
     public String home() {
         return "home";
