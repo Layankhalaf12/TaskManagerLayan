@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class TaskService {
 
+    // In-memory task storage; in a real app, this would be a database
     private final List<Task> tasks = new ArrayList<>();
     private int nextId = 1;
 
